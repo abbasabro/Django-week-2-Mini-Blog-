@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogify</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'myblogpost/bootstrap.css' %}">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg  bg-warning shadow-lg p-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/home/"> <img src="{% static 'images/bootstrap-logo.svg' %}" alt="Logo"
+                    width="30" height="24" class="d-inline-block align-text-top">
+                Blogify</a>
+            {% if request.user.is_authenticated %}
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/home/">Home</a>
+                    </li>
+
+                  <li class="nav-item dropdown">
+                        <button class="btn nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Blog Info
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/my-blog/">My Blogs</a></li>
+                            <li><a class="dropdown-item" href="/add-blog/">Add Blog</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><h6 class="navbar-text">Username : <span class="text-info">{{request.user}}</span></h6></li>
+                </ul>
+                
+                <form class="mr-2 d-flex" role="search">
+                    <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success mr-2" type="submit">Search</button>
+                </form>
+                <form class="ml-2 d-flex ">
+                    <a class="btn btn-danger" href="/logout/">logout</a>
+                </form>
+            </div>
+            {% else %}
+            <form>
+                <a class="btn btn-success" href="/login/">Login</a>
+            </form>
+            {% endif %}
+        </div>
+    </nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    {% block start %}
+
+    {% endblock %}
+</body>
+
+</html>

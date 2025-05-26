@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block start %}
+
+<div class="container mt-3">
+    <h1 class="fw-bold">{{ post.title }}</h1>
+    <p class="text-muted">By {{ post.user.first_name }} {{ post.user.last_name }} | {{ post.created_at }}</p>
+    <hr>
+    <div class="text-center">
+    <img src="{{ post.img.url }}" class="img-fluid " style="max-height: 400px; object-fit: contain;">
+    </div>   
+    <hr>
+    <p>{{ post.content }}</p>
+</div>
+{% endblock %}
