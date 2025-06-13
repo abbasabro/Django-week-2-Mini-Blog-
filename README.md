@@ -20,13 +20,8 @@ This is a **basic blog application** built with Django as part of my learning jo
 
 ## 🛠️ Technologies Used
 
-<<<<<<< HEAD
-- Python 3.x  
-- Django 4.x  
-=======
-- Python 3.12.3  
-- Django 5.2.1  
->>>>>>> 2600b95380e93d1c9d24ded91f52d8d67a9d0ef5
+- Python 3.12.3 
+- Django 5.2.1 
 - SQLite (default Django database)  
 - Bootstrap 5  
 - HTML5, CSS3  
@@ -39,22 +34,21 @@ This is a **basic blog application** built with Django as part of my learning jo
 
 ```
 blogpost/
-│
-├── myblogpost/              # Main App
-│   ├── models.py            # Blog Post model
-│   ├── forms.py             # Manual and Model Forms
-│   ├── views.py             # Views for auth & CRUD
-│   ├── urls.py              # App-level URLs
-│   ├── templates/           # All HTML templates
-│   └── static/              # Static files (CSS, JS)
-│
-├── blogpost/                # Project config folder
+├── myblogpost/         # Main App
+│   ├── models.py       # Blog Post model
+│   ├── forms.py        # Manual and Model Forms
+│   ├── views.py        # Views for auth & CRUD
+│   ├── seed.py         # Add fake data
+│   ├── manager.py      # Custom User model manager
+│   ├── utils.py        # Extra Email and Slug related code
+│   ├── templates/      # All HTML templates
+│   └── static/         # Static files (CSS, JS)
+├── blogpost/           # Project config folder
 │   ├── settings.py
 │   ├── urls.py
 │   ├── asgi.py
 │   └── wsgi.py
-│
-├── db.sqlite3               # Database file
+├── db.sqlite3          # Database file
 ├── manage.py
 └── README.md
 ```
@@ -63,10 +57,10 @@ blogpost/
 
 ## 🔐 Authentication Info
 
-- User registration and login are built using manual `forms.Form`
-- Blog post creation uses `forms.ModelForm`
-- Authenticated views use Django’s session middleware
-- Users can only update or delete **their own** blogs
+- User registration and login are built using manual `forms.Form`  
+- Blog post creation uses `forms.ModelForm`  
+- Authenticated views use Django’s session middleware  
+- Users can only update or delete **their own** blogs  
 
 ---
 
@@ -81,7 +75,10 @@ cd django-blogpost
 
 # Create virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate
+
+# On Windows:
+venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
@@ -93,38 +90,38 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Then visit `http://127.0.0.1:8000/` in your browser.
+Then visit http://127.0.0.1:8000/ in your browser.
 
 ---
 
 ## 📚 What I Learned
 
-- Deeper understanding of **Django models** and **relationships**
-- CRUD operations using **Django Shell** and **QuerySets**
-- Creating and validating **manual and model-based forms**
-- Using **Django messages** to provide UI feedback
-- Implementing **user login, logout, and signup** with session persistence
+This project was a significant step in my Django learning journey. Key takeaways include:
+
+- Deeper understanding of Django models and relationships  
+- CRUD operations using Django Shell and QuerySets  
+- Creating and validating manual and model-based forms  
+- Using Django messages to provide UI feedback  
+- Implementing user login, logout, and signup with session persistence  
+- Class-Based Views (CBV) concepts: While not fully implemented in this specific project, I gained a strong theoretical understanding of CBVs for building more scalable and organized views.  
+- Custom User Models: Explored moving beyond default Django User to implement authentication with email/phone numbers, and how to add additional user fields like pictures.  
+- Slugs: Learned to implement slugs for creating clean, human-readable URLs for blog posts.  
+- Comment Management: Implemented features for users to delete their own comments and ensured each blog post has its unique comment section.  
+- Aggregate Functions: Used Django's aggregate functions to perform calculations, such as getting the total number of comments for a blog.  
+- Django Signals: Discovered and utilized Django signals to automate tasks like sending welcome emails to newly registered users.  
+- Faker Library: Practiced generating realistic fake data for development and testing purposes using the Faker library.  
 
 ---
 
-## 🙌 Credits & Resources
+🙌 **Credits & Resources**
 
-<<<<<<< HEAD
-- [CodingForAll Django Playlist by Abhijeet Gupta](https://www.youtube.com/playlist?list=PLgPJX9sVy92wDqVZ4F0PQ3vX_Gg6jG_9C)
-- [Telusko Django Playlist by Navin Reddy](https://www.youtube.com/playlist?list=PLsyeobzWxl7q2eaJxEl5VkGF5jsxZgT0_)
-=======
-- [CodingForAll Django Playlist by Abhijeet Gupta]([https://www.youtube.com/playlist?list=PLgPJX9sVy92wDqVZ4F0PQ3vX_Gg6jG_9C](https://www.youtube.com/watch?v=Mezody4yiXw&list=PLVBKjEIdL9bvCdI4l1Emvbezv10GjUaLk))
->>>>>>> 2600b95380e93d1c9d24ded91f52d8d67a9d0ef5
+- CodingForAll Django Playlist by Abhijeet Gupta  
+- Telusko Django Playlist by Navin Reddy  
 - Bootstrap 5 Documentation  
-- ChatGPT – for guidance on code structure and Bootstrap help
+- ChatGPT – for guidance on code structure and Bootstrap help  
 
 ---
 
-## 🧑‍💻 Author
-
-<<<<<<< HEAD
+🧑‍💻 **Author**  
 **Abbas Ali**  
-=======
-**Abbas Abro**  
->>>>>>> 2600b95380e93d1c9d24ded91f52d8d67a9d0ef5
-[LinkedIn](https://www.linkedin.com/in/abro-abbas/) | [GitHub](https://github.com/abbasabro)
+[LinkedIn](https://www.linkedin.com/in/abbas-abro/) | [GitHub](https://github.com/abbasabro)
