@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block start %}
+
+<div class="container mt-3">
+    <div class="row">
+        {% for message in messages %}
+                <div class="alert alert-{{message.tags}}" role="alert">
+                    {{message}}
+                </div>
+        {% endfor %}
+        <div class="col-md-4 mb-3">
+        
+            <h1 text = "bold">Profile Picture</h1>
+        </div>
+        <div class="col-md-8 mb-3">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+            <input type="hidden" name="form_type" value="profile_pic_form">
+            {% if request.user.profile_pic %}
+            <img  class="img-fluid img-thumbnail" src="{{request.user.profile_pic.url}}">
+            {%else%}
+            <h1>Please Upload Profile Pic</h1>
+            {% endif %}
+            <input class="form-control mb-3" type="file" name="profile_pic">
+            <button type="submit " class="btn btn-success">Upload</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <h1 text = "bold">Profile Details</h1>
+        </div>
+        <div class="col-md-8 mb-3">
+            <form class="shadow-lg p-3" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="form_type" value="user_info_form">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-control mb-2" name="first_name" value="{{request.user.first_name}}">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-control mb-2" name="last_name" value="{{request.user.last_name}}">
+                <label class="form-label">Email</label>
+                <input type="text" class="form-control mb-2" name="email" value="{{request.user.email}}" disabled>
+                <label class="form-label">Phone no.</label>
+                <input type="text" class="form-control mb-2" name="phone_no" value="{{request.user.phone_no}}">
+                <button type="submit" class="btn btn-success">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

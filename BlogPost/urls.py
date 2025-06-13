@@ -18,7 +18,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.urls import path
+from django.urls import include, path
 from myblogpost.views import *
 
 urlpatterns = [
@@ -26,12 +26,14 @@ urlpatterns = [
     path('home/',home,name="home"),
     path('add-blog/',addblog,name="addblog"),
     path('my-blog/',myblog,name="myblog"),
-    path('update-blog/<id>/',updateblog,name="updateblog"),
+    path('update-blog/<slug>/',updateblog,name="updateblog"),
     path('delete-blog/<id>/',deleteblog,name="deleteblog"),
-    path('post-detail/<id>/',postdetail,name="postdetail"),
+    path('post-detail/<slug>/',postdetail,name="postdetail"),
+    path('post-detail/<slug:post_slug>/delete-comment/<int:id>/', deletecomment, name="deletecomment"),
     path('registration/',registration_page,name="registration_page"),
     path('login/',login_page,name="login_page"),
     path('logout/',logout_page,name="logout_page"),
+    path('user-info/',user_info,name="user_info"),
     path('admin/', admin.site.urls),
 ]
 

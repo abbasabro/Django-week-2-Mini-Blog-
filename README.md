@@ -20,8 +20,13 @@ This is a **basic blog application** built with Django as part of my learning jo
 
 ## 🛠️ Technologies Used
 
+<<<<<<< HEAD
 - Python 3.x  
 - Django 4.x  
+=======
+- Python 3.12.3  
+- Django 5.2.1  
+>>>>>>> 2600b95380e93d1c9d24ded91f52d8d67a9d0ef5
 - SQLite (default Django database)  
 - Bootstrap 5  
 - HTML5, CSS3  
@@ -104,8 +109,12 @@ Then visit `http://127.0.0.1:8000/` in your browser.
 
 ## 🙌 Credits & Resources
 
+<<<<<<< HEAD
 - [CodingForAll Django Playlist by Abhijeet Gupta](https://www.youtube.com/playlist?list=PLgPJX9sVy92wDqVZ4F0PQ3vX_Gg6jG_9C)
 - [Telusko Django Playlist by Navin Reddy](https://www.youtube.com/playlist?list=PLsyeobzWxl7q2eaJxEl5VkGF5jsxZgT0_)
+=======
+- [CodingForAll Django Playlist by Abhijeet Gupta]([https://www.youtube.com/playlist?list=PLgPJX9sVy92wDqVZ4F0PQ3vX_Gg6jG_9C](https://www.youtube.com/watch?v=Mezody4yiXw&list=PLVBKjEIdL9bvCdI4l1Emvbezv10GjUaLk))
+>>>>>>> 2600b95380e93d1c9d24ded91f52d8d67a9d0ef5
 - Bootstrap 5 Documentation  
 - ChatGPT – for guidance on code structure and Bootstrap help
 
@@ -113,5 +122,9 @@ Then visit `http://127.0.0.1:8000/` in your browser.
 
 ## 🧑‍💻 Author
 
+<<<<<<< HEAD
 **Abbas Ali**  
+=======
+**Abbas Abro**  
+>>>>>>> 2600b95380e93d1c9d24ded91f52d8d67a9d0ef5
 [LinkedIn](https://www.linkedin.com/in/abro-abbas/) | [GitHub](https://github.com/abbasabro)

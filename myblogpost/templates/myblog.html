@@ -21,7 +21,7 @@
                     <ul class="list-inline list-unstyled">
                         <li class="list-inline-item"> <a href="#" class="btn btn-primary">Read More</a></li>
                         <li class="list-inline-item"> <a href="/delete-blog/{{ post.id }}" class="btn btn-danger">Delete</a></li>
-                        <li class="list-inline-item"> <a href="/update-blog/{{ post.id }}" class="btn btn-success">Update</a></li>
+                        <li class="list-inline-item"> <a href="/update-blog/{{ post.slug }}" class="btn btn-success">Update</a></li>
                     </ul>
                     <div class="card-footer">Written by {{ post.user.first_name }} {{ post.user.last_name }} <br> {{ post.created_at }}</div>
                 </div>
